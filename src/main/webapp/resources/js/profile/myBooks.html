@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="text-right">
+        <a href="#/createBook" class="btn btn-success btn-lg"
+           style="margin-right: 15px">
+            Create book
+        </a>
+    </div>
+</div>
+<br/>
+<ul class="list-group" id="contact-list">
+    <li ng-if="!transfers.length">
+        <div class="alert alert-warning"><span class="h3">You have no books for now.</span></div>
+    </li>
+    <li class="list-group-item book" ng-repeat="transfer in transfers">
+        <div class="col-xs-12 col-sm-3">
+            <img ng-src="{{transfer.book.picture}}" alt="{{transfer.book.name}}"
+                 class="img-responsive"/>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+                <span class="name h4">
+                    <a href="#/books/{{transfer.book.id}}" class="mybtn">{{transfer.book.name}}</a>
+                </span>
+            <br/>
+            <br/>
+            <span class="h4"><span class="book-info">Genre:</span> {{transfer.book.genre}}</span>
+            <br/>
+            <span class="h4"><span class="book-info">Author:</span> {{transfer.book.author}}</span>
+            <br/>
+            <br/>
+            <span class="h5 book-description">{{transfer.book.description}}</span>
+            <br/>
+
+        </div>
+
+        <span class="book-author">
+            <button ng-click="pushTransfer(transfer)" class="btn btn-primary">
+                Release book
+            </button>
+        </span>
+        <div class="clearfix"></div>
+    </li>
+</ul>

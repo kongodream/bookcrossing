@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Andalus;
+}
+
+body {
+    background: url("/resources/images/books-bench-background3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: scroll;
+}
+
+.ng-enter {
+    transition: 1.75s;
+    opacity: 0;
+}
+
+.ng-enter-active {
+    opacity: 1;
+}
+
+.ng-enter-stagger {
+    transition-delay: 2s;
+}
+
+.ng-leave-stagger {
+    transition-delay: 1s;
+}
+
+.ng-leave {
+    transition: 1.75s;
+    opacity: 1;
+}
+
+.ng-leave-active {
+    opacity: 0;
+}
+
+.app-container {
+    margin-top: 70px;
+}
+
+li {
+    list-style-type: none;
+}
+
+

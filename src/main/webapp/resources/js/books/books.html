@@ -1,0 +1,26 @@
+<ul class="list-group" id="contact-list">
+    <li class="list-group-item book" ng-repeat="book in books">
+            <div class="col-xs-12 col-sm-3">
+                <img ng-src="{{book.picture}}" alt="{{book.name}}"
+                     class="img-responsive"/>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <span class="name h4">
+                    <a href="#/books/{{book.id}}" class="mybtn">{{book.name}}</a>
+                </span>
+                <br/>
+                <br/>
+                <span class="h4"><span class="book-info">Genre:</span> {{book.genre}}</span>
+                <br/>
+                <span class="h4"><span class="book-info">Author:</span> {{book.author}}</span>
+                <br/>
+                <br/>
+                <span class="h5 book-description">{{book.description}}</span>
+                <br/>
+
+            </div>
+
+        <span class="text-muted book-author">First owner <a href="# /users/{{book.creator.id}}">{{book.creator.name}}</a></span>
+            <div class="clearfix"></div>
+    </li>
+</ul>

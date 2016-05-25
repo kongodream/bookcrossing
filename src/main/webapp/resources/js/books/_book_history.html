@@ -1,0 +1,53 @@
+<table class="table table-history" >
+    <tr>
+        <th>
+            Book id
+        </th>
+        <th>
+            User photo
+        </th>
+        <th>
+            User name
+        </th>
+        <th>
+            Date receiving
+        </th>
+        <th>
+            Date release
+        </th>
+    </tr>
+    <tr ng-repeat="transfer in transfers" ng-class="{warning : !transfer.datePush">
+        <td>
+            {{transfer.book.id}}
+        </td>
+        <td>
+            <img ng-src="{{transfer.user.picture}}" style="width: 50px;">
+        </td>
+        <td>
+            {{transfer.user.name}}
+        </td>
+        <td>
+            {{transfer.datePull.hour}}:
+            {{transfer.datePull.minute}}
+            &nbsp;
+            {{transfer.datePull.dayOfMonth}}
+            &nbsp;
+            {{transfer.datePull.month}}
+            &nbsp;
+            {{transfer.datePull.year}}
+        </td>
+        <td>
+            <div ng-if="!transfer.datePush">
+                Not released yet!
+            </div>
+            {{transfer.datePush.hour}}:
+            {{transfer.datePush.minute}}
+            &nbsp;
+            {{transfer.datePush.dayOfMonth}}
+            &nbsp;
+            {{transfer.datePush.month}}
+            &nbsp;
+            {{transfer.datePush.year}}
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,60 @@
+.book {
+    opacity: .93;
+    background-color: #fffbc7;
+    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.well.margin-well {
+    background-color: #fffbc7;
+}
+
+.book-description {
+    overflow: hidden;
+    max-height: 60%;
+    color: #566680;
+}
+
+.book-author {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.book-info {
+    border-bottom: 1px solid gray;
+    color: #464646;
+}
+
+.book-name {
+    color: #eb9316;
+    margin-left: 10px;
+}
+
+.book-history {
+    color: #c78688;
+    margin: 0 0 20px 10px;
+}
+
+.book-history-info {
+    font-family: Calibri;
+}
+
+.mybtn {
+    display: inline-block;
+    background-color: white;
+    margin-bottom: -5px;
+    padding: 6px;
+    color: black;
+    border: 1px solid #2e2e2e;
+    border-radius: 4px;
+}
+
+.mybtn:hover{
+   text-decoration: none;
+}
+
+.table.table-history {
+    font-size: 1.4em;
+}
