@@ -12,6 +12,7 @@
     <link href="/resources/css/books.css" rel="stylesheet"/>
     <link href="/resources/css/sidebar.css" rel="stylesheet"/>
     <link href="/resources/css/navbar.css" rel="stylesheet"/>
+    <link href="/resources/css/lib/ui-select.css" rel="stylesheet"/>
 
 
 </head>
@@ -32,6 +33,8 @@
 <script src="/resources/js/lib/angular-route.min.js"></script>
 <script src="/resources/js/lib/angular-resource.js"></script>
 <script src="/resources/js/lib/angular-animate.js"></script>
+<script src="/resources/js/lib/ui-bootstrap.js"></script>
+<script src="/resources/js/lib/ui-select.js"></script>
 <script src="/resources/js/lib/angular-ui-notification.js"></script>
 
 <script src="/resources/js/app.js"></script>
@@ -44,6 +47,7 @@
 <script src="/resources/js/profile/userTransfers.js"></script>
 <script src="/resources/js/foundBook/foundBook.js"></script>
 <script src="/resources/js/foundBook/foundBookCtrl.js"></script>
+<script src="/resources/js/Genre/genre.js"></script>
 
 
 </body>

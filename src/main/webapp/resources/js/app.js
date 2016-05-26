@@ -8,10 +8,12 @@ var bookCrossing = angular.module('bookCrossing', [
     'bookCtrls',
     'transferService',
     'ui-notification',
+    'ui.select',
     'profileCtrl',
     'userTransfers',
     'foundBook',
-    'foundBookCtrl'
+    'foundBookCtrl',
+    'genreModule'
 ]);
 
 bookCrossing.config(['$routeProvider',

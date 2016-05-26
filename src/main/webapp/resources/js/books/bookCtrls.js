@@ -5,13 +5,15 @@ module.controller('booksCtrl', ['$scope', 'Book',
         $scope.books = Book.query();
     }]);
 
-module.controller('bookDetailCtrl', ['$scope', '$routeParams', 'Book', 'Transfer', 'FoundBook', '$rootScope', '$location',
-    function ($scope, $routeParams, Book, Transfer, FoundBook, $rootScope, $location) {
+module.controller('bookDetailCtrl', ['$scope', '$routeParams', 'Book', 'GenreService', 'Transfer', 'FoundBook', '$rootScope', '$location',
+    function ($scope, $routeParams, Book, GenreService, Transfer, FoundBook, $rootScope, $location) {
         var bookId = $routeParams.bookId;
 
         $scope.book = Book.get({id: bookId});
 
         $scope.transfers = Transfer.query({id: bookId});
+
+        $scope.genres = GenreService.getGenres();
 
        $scope.acceptBook = function () {
            $rootScope.whantToAdd = false;
@@ -21,8 +23,9 @@ module.controller('bookDetailCtrl', ['$scope', '$routeParams', 'Book', 'Transfer
        }
     }]);
 
-module.controller('bookCreationCtrl', ['$scope', '$location', 'Book', 'Notification',
-    function ($scope, $location, Book, Notification) {
+module.controller('bookCreationCtrl', ['$scope', 'GenreService', '$location', 'Book', 'Notification',
+    function ($scope, GenreService ,$location, Book, Notification) {
+        $scope.genres = GenreService.getGenres();
         $scope.book = {};
         $scope.createBook = function () {
             Book.save($scope.book)

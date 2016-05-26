@@ -1,19 +1,20 @@
 package com.dataLayer.entity.dto;
 
 import com.dataLayer.entity.Book;
+import com.dataLayer.entity.Genre;
 
 public class BooksResponseDTO {
     private int id;
-    private String name;
+    private String title;
     private String author;
-    private String genre;
+    private Genre genre;
     private UserDTO creator;
     private String picture;
     private String description;
 
     public BooksResponseDTO(Book book) {
         this.id = book.getId();
-        this.name = book.getName();
+        this.title = book.getTitle();
         this.author = book.getAuthor();
         this.genre = book.getGenre();
         this.creator = new UserDTO(book.getCreator());
@@ -29,12 +30,12 @@ public class BooksResponseDTO {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -45,11 +46,11 @@ public class BooksResponseDTO {
         this.author = author;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 

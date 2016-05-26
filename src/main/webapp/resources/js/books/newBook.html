@@ -4,14 +4,21 @@
         <label>
             Title
             <br/>
-            <input type="text" ng-model="book.name" class="form-control">
+            <input type="text" ng-model="book.title" class="form-control">
         </label>
 
         <br/>
         <label>
             Genre(s)
             <br/>
-            <input type="text" ng-model="book.genre" class="form-control">
+            <!--<input type="text" ng-model="book.genre" class="form-control">-->
+
+            <ui-select ng-model="book.genres" theme="selectize" style="width: 300px;" title="Choose a genre">
+                <ui-select-match placeholder="Select or search a genre in the list...">{{$item.title}}</ui-select-match>
+                <ui-select-choices repeat="genre in genres | filter: $select.search">
+                    <span ng-bind-html="genre.title | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
         </label>
         <label>
             Author(s)

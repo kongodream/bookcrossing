@@ -9,11 +9,11 @@ import java.util.List;
 @Table(name = "books")
 public class Book extends Entity {
     @Column
-    private String name;
+    private String title;
     @Column
     private String author;
-    @Column
-    private String genre;
+    @ManyToOne
+    private Genre genre;
     @ManyToOne
     private User creator;
     @ManyToOne
@@ -30,7 +30,7 @@ public class Book extends Entity {
     }
 
     public Book(RequestBook book, User creator) {
-        this.name = book.getName();
+        this.title = book.getTitle();
         this.author = book.getAuthor();
         this.description = book.getDescription();
         this.genre = book.getGenre();
@@ -39,12 +39,12 @@ public class Book extends Entity {
         this.owner = creator;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -55,11 +55,11 @@ public class Book extends Entity {
         this.author = author;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
