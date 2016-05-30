@@ -1,0 +1,51 @@
+<div class="col-md-5 col-md-offset-4 book">
+    <h2>Create new book</h2>
+    <form>
+        <label>
+            Title
+            <br/>
+            <input type="text" ng-model="book.title" class="form-control">
+        </label>
+
+        <br/>
+        <label>
+            Genre(s)
+            <br/>
+            <!--<input type="text" ng-model="book.genre" class="form-control">-->
+
+            <ui-select ng-model="book.genres" theme="selectize" style="width: 300px;" title="Choose a genre">
+                <ui-select-match placeholder="Select or search a genre in the list...">{{$item.title}}</ui-select-match>
+                <ui-select-choices repeat="genre in genres">
+                    <span ng-bind-html="genre.title"></span>
+                </ui-select-choices>
+            </ui-select>
+        </label>
+        <label>
+            Author(s)
+            <br/>
+            <input type="text" ng-model="book.author" class="form-control">
+        </label>
+        <br/>
+        <label>
+            Description
+            <br/>
+            <textarea style="resize: vertical; width: 260px; padding: 2px 10px;" ng-model="book.description">
+
+            </textarea>
+        </label>
+        <br/>
+        <label>
+            Image
+            <br/>
+            <input type="text" placeholder="e.g. http://site.com/photo_book.png"
+                   class="form-control"
+                   ng-model="book.picture">
+        </label>
+        <br>
+        <button ng-click="createBook()" class="btn btn-primary">
+            Create
+        </button>
+
+        <div class="clearfix"></div>
+    </form>
+</div>

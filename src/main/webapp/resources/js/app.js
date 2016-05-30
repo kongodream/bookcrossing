@@ -28,7 +28,7 @@ bookCrossing.config(['$routeProvider',
                 controller: 'bookDetailCtrl'
             })
             .when('/createBook', {
-                templateUrl: '/resources/js/books/newBook.html',
+                templateUrl: '/resources/js/books/new_book.html',
                 controller: 'bookCreationCtrl'
             })
             .when('/myBooks', {
