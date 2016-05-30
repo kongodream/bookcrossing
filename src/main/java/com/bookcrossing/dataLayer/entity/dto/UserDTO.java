@@ -1,4 +1,5 @@
 package com.bookcrossing.dataLayer.entity.dto;
+
 import com.bookcrossing.dataLayer.entity.User;
 
 
@@ -57,4 +58,4 @@ public class UserDTO {
         this.picture = picture;
     }
 
-  }
+}

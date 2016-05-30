@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -16,12 +17,13 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:properties/database.properties")
+@EnableTransactionManagement
 public class HibernateConfig {
 
     @Bean
 //    @Profile("dev")
     public DataSource dataSource(
-            @Value("jdbc:mysql://localhost:3306/bookcrossing2") String url,
+            @Value("jdbc:mysql://localhost:3306/bookcrossing3") String url,
             @Value("root") String username,
             @Value("admin") String password
     ) throws SQLException {
@@ -50,13 +52,13 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan("com.bookcrossing.dataLayer.entity");
+        sessionFactory.setPackagesToScan("com.dataLayer.entity");
         sessionFactory.setHibernateProperties(this.hibernateProperties());
         return sessionFactory;
     }
 
     @Bean
-    public Properties hibernateProperties() {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    public Properties hibernateProperties() {
         return new Properties() {
             {
                 setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
@@ -76,4 +78,3 @@ public class HibernateConfig {
         return txManager;
     }
 }
-

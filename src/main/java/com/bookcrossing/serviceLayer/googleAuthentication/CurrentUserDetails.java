@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+
 public class CurrentUserDetails extends User implements UserDetails {
 
     private final Collection<? extends GrantedAuthority> authorities;

@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.provider.OAuth2Request;
 import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.UserAuthenticationConverter;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 import java.util.Set;
@@ -18,6 +19,7 @@ import java.util.Set;
 import static com.github.choonchernlim.betterPreconditions.preconditions.PreconditionFactory.expect;
 
 @Service
+@Transactional
 public class GoogleAccessTokenConverter extends DefaultAccessTokenConverter {
     private static Logger LOGGER = LoggerFactory.getLogger(GoogleAccessTokenConverter.class);
     private final UserAuthenticationConverter userAuthenticationConverter;

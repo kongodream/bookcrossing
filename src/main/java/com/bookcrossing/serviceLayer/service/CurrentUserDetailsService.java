@@ -15,17 +15,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class CurrentUserDetailsService implements UserDetailsService {
     private final String userInfoUrl;
     private final OAuth2RestOperations oauth2RestTemplate;
 
     @Autowired
-    GoogleProfileDao googleProfileDao;
+    private GoogleProfileDao googleProfileDao;
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
     public CurrentUserDetailsService(@Value("${google.user.info.url}") final String userInfoUrl,

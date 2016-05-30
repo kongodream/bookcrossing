@@ -1,6 +1,5 @@
 package com.bookcrossing.dataLayer.entity;
 
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +7,7 @@ import java.util.List;
 @javax.persistence.Entity
 @Table(name = "users")
 public class User extends Entity {
-    @Column(name = "email")
+    @Column
     private String email;
     @Column
     private String name;
@@ -88,11 +87,11 @@ public class User extends Entity {
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public void setEmail(String username) {
         this.email = username;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

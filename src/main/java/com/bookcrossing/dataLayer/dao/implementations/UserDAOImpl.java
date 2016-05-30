@@ -12,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDAO {
+@Transactional
+public class UserDAOImpl implements UserDAO {
     @Autowired
-    private SessionFactory sessionFactory;
+    SessionFactory sessionFactory;
 
     public void save(User person) {
         Session session = sessionFactory.getCurrentSession();
@@ -45,4 +46,3 @@ public class UserDaoImpl implements UserDAO {
         return (List<User>) query.list();
     }
 }
-

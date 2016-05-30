@@ -15,6 +15,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.DefaultResponseErrorHandler;
@@ -27,6 +28,7 @@ import java.util.Map;
 import static com.github.choonchernlim.betterPreconditions.preconditions.PreconditionFactory.expect;
 
 @Service
+@Transactional
 public class GoogleTokenServices extends RemoteTokenServices {
     private static Logger LOGGER = LoggerFactory.getLogger(GoogleTokenServices.class);
 

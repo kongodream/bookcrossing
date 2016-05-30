@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public class GoogleProfileDao {
 
     @Autowired
-    SessionFactory sessionFactory ;
+    private SessionFactory sessionFactory ;
 
     public void save(GoogleProfile googleProfile) {
         Session session = sessionFactory.getCurrentSession();
