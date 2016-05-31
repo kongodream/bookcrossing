@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-@Qualifier("transferDAOImpl")
 public class TransferDAOImpl implements TransferDAO {
     @Autowired
     private SessionFactory sessionFactory;

@@ -40,15 +40,15 @@
 <script src="/resources/js/app.js"></script>
 <script src="/resources/js/navbarCtrl.js"></script>
 <script src="/resources/js/sidebarCtrl.js"></script>
-<script src="/resources/js/books/bookService.js"></script>
-<script src="/resources/js/books/bookCtrls.js"></script>
-<script src="/resources/js/books/transferService.js"></script>
+<script src="/resources/js/Book/bookService.js"></script>
+<script src="/resources/js/Book/bookCtrls.js"></script>
+<script src="/resources/js/Book/transferService.js"></script>
 <script src="/resources/js/profile/profileCtrl.js"></script>
 <script src="/resources/js/profile/userTransfers.js"></script>
 <script src="/resources/js/foundBook/foundBook.js"></script>
 <script src="/resources/js/foundBook/foundBookCtrl.js"></script>
 <script src="/resources/js/Genre/genre.js"></script>
-
+<script src="/resources/js/Author/author.js"></script>
 
 </body>
 </html>

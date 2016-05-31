@@ -13,22 +13,23 @@ var bookCrossing = angular.module('bookCrossing', [
     'userTransfers',
     'foundBook',
     'foundBookCtrl',
-    'genreModule'
+    'genreModule',
+    'authorModule'
 ]);
 
 bookCrossing.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
             .when('/books', {
-                templateUrl: '/resources/js/books/books.html',
+                templateUrl: '/resources/js/Book/pages/books.html',
                 controller: 'booksCtrl'
             })
             .when('/books/:bookId', {
-                templateUrl: '/resources/js/books/book.html',
+                templateUrl: '/resources/js/Book/pages/book.html',
                 controller: 'bookDetailCtrl'
             })
             .when('/createBook', {
-                templateUrl: '/resources/js/books/new_book.html',
+                templateUrl: '/resources/js/Book/pages/new_book.html',
                 controller: 'bookCreationCtrl'
             })
             .when('/myBooks', {

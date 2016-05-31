@@ -2,9 +2,11 @@ package com.bookcrossing.dataLayer.entity;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@javax.persistence.Entity(name = "transfer")
+@javax.persistence.Entity
+@Table(name = "transfers")
 public class Transfer extends Entity {
     @Column
     private LocalDateTime datePull;

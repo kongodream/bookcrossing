@@ -2,7 +2,7 @@ package com.bookcrossing.serviceLayer.service.interfaces;
 
 import com.bookcrossing.dataLayer.entity.Book;
 import com.bookcrossing.dataLayer.entity.dto.BookDTO;
-import com.bookcrossing.dataLayer.entity.dto.BooksResponseDTO;
+import com.bookcrossing.dataLayer.entity.dto.BookResponseDTO;
 import com.bookcrossing.dataLayer.entity.dto.RequestBook;
 import org.springframework.security.core.Authentication;
 
@@ -12,7 +12,7 @@ public interface BookService {
 
     void saveBook(RequestBook book, Authentication authentication);
 
-    List<BooksResponseDTO> getAllBook();
+    List<BookResponseDTO> getAllBook();
 
     BookDTO getBookDTOById(int id);
 

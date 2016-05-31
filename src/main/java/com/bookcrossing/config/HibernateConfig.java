@@ -52,7 +52,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan("com.dataLayer.entity");
+        sessionFactory.setPackagesToScan("com.bookcrossing.dataLayer.entity");
         sessionFactory.setHibernateProperties(this.hibernateProperties());
         return sessionFactory;
     }

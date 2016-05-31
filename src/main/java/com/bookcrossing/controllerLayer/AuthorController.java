@@ -1,7 +1,8 @@
 package com.bookcrossing.controllerLayer;
 
+import com.bookcrossing.dataLayer.entity.dto.AuthorDTO;
 import com.bookcrossing.dataLayer.entity.dto.GenreDTO;
-import com.bookcrossing.serviceLayer.service.interfaces.GenreService;
+import com.bookcrossing.serviceLayer.service.interfaces.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-public class GenreController {
+public class AuthorController {
     @Autowired
-    private GenreService genreService;
+    private AuthorService authorService;
 
-    @RequestMapping(value = "/api/genres", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/authors", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<GenreDTO> getGenres() {
-        return genreService.getAllGenres();
+    List<AuthorDTO> getAuthors() {
+        return authorService.getAllAuthors();
     }
 }

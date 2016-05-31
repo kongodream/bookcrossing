@@ -1,25 +1,39 @@
 package com.bookcrossing.dataLayer.entity.dto;
 
+import com.bookcrossing.dataLayer.entity.Author;
 import com.bookcrossing.dataLayer.entity.Book;
 import com.bookcrossing.dataLayer.entity.Genre;
 
-public class BooksResponseDTO {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class BookResponseDTO {
     private int id;
     private String title;
-    private String author;
+    private List<AuthorDTO> author;
     private Genre genre;
     private UserDTO creator;
     private String picture;
     private String description;
 
-    public BooksResponseDTO(Book book) {
+    public BookResponseDTO(Book book) {
         this.id = book.getId();
         this.title = book.getTitle();
-        this.author = book.getAuthor();
+        this.author = createAuthorDTOs(book.getAuthors());
         this.genre = book.getGenre();
         this.creator = new UserDTO(book.getCreator());
         this.picture = book.getPicture();
         this.description = book.getDescription();
+    }
+
+    private List<AuthorDTO> createAuthorDTOs(Set<Author> authors) {
+        return authors
+                .stream()
+                .map(AuthorDTO::new)
+                .collect(Collectors.toList());
     }
 
     public int getId() {
@@ -38,11 +52,11 @@ public class BooksResponseDTO {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public List<AuthorDTO> getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(List<AuthorDTO> author) {
         this.author = author;
     }
 

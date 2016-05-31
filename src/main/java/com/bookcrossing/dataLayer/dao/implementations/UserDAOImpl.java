@@ -12,34 +12,38 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional
 public class UserDAOImpl implements UserDAO {
     @Autowired
     SessionFactory sessionFactory;
 
+    @Override
     public void save(User person) {
         Session session = sessionFactory.getCurrentSession();
         session.save(person);
     }
 
+    @Override
     public User getUser(long id) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from User where id = :id");
         return (User) query.setLong("id", id).uniqueResult();
     }
 
+    @Override
     public User getUserByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from User where email = :email");
         return (User) query.setString("email", email).uniqueResult();
     }
 
+    @Override
     public User findUsersByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from User where email = :email");
         return (User) query.setString("email", email).uniqueResult();
     }
 
+    @Override
     public List<User> getListOfAllUsers() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from User");

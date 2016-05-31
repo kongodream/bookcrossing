@@ -3,11 +3,10 @@ package com.bookcrossing.serviceLayer.service.implementations;
 import com.bookcrossing.dataLayer.dao.interfaces.BookDAO;
 import com.bookcrossing.dataLayer.entity.Book;
 import com.bookcrossing.dataLayer.entity.dto.BookDTO;
-import com.bookcrossing.dataLayer.entity.dto.BooksResponseDTO;
+import com.bookcrossing.dataLayer.entity.dto.BookResponseDTO;
 import com.bookcrossing.dataLayer.entity.dto.RequestBook;
 import com.bookcrossing.dataLayer.entity.User;
 import com.bookcrossing.serviceLayer.service.interfaces.BookService;
-import com.bookcrossing.serviceLayer.service.interfaces.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -31,12 +30,12 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BooksResponseDTO> getAllBook() {
-        List<BooksResponseDTO> booksResponseDTOs = new ArrayList<>();
+    public List<BookResponseDTO> getAllBook() {
+        List<BookResponseDTO> bookResponseDTOs = new ArrayList<>();
         for (Book book : bookDAO.getListOfAllBooks()) {
-            booksResponseDTOs.add(new BooksResponseDTO(book));
+            bookResponseDTOs.add(new BookResponseDTO(book));
         }
-        return booksResponseDTOs;
+        return bookResponseDTOs;
     }
 
     @Override

@@ -1,12 +1,15 @@
 package com.bookcrossing.dataLayer.entity.dto;
 
+import com.bookcrossing.dataLayer.entity.Author;
 import com.bookcrossing.dataLayer.entity.Book;
 import com.bookcrossing.dataLayer.entity.Genre;
+
+import java.util.List;
 
 public class BookDTO {
     private int id;
     private String title;
-    private String author;
+    private List<Author> author;
     private Genre genre;
     private UserDTO creator;
     private UserDTO owner;
@@ -16,7 +19,6 @@ public class BookDTO {
     public BookDTO(Book book) {
         this.id = book.getId();
         this.title = book.getTitle();
-        this.author = book.getAuthor();
         this.genre = book.getGenre();
         this.creator = new UserDTO(book.getCreator());
         this.picture = book.getPicture();
@@ -42,11 +44,11 @@ public class BookDTO {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public List<Author> getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(List<Author> author) {
         this.author = author;
     }
 

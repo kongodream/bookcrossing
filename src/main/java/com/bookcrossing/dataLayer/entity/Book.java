@@ -3,15 +3,20 @@ package com.bookcrossing.dataLayer.entity;
 import com.bookcrossing.dataLayer.entity.dto.RequestBook;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @javax.persistence.Entity
 @Table(name = "books")
 public class Book extends Entity {
     @Column
     private String title;
-    @Column
-    private String author;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "books_authors",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "author_id")})
+    private Set<Author> authors;
     @ManyToOne
     private Genre genre;
     @ManyToOne
@@ -31,7 +36,7 @@ public class Book extends Entity {
 
     public Book(RequestBook book, User creator) {
         this.title = book.getTitle();
-        this.author = book.getAuthor();
+        this.authors = new HashSet<>(book.getAuthor());
         this.description = book.getDescription();
         this.genre = book.getGenre();
         this.picture = book.getPicture();
@@ -47,12 +52,13 @@ public class Book extends Entity {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+
+    public Set<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 
     public Genre getGenre() {
