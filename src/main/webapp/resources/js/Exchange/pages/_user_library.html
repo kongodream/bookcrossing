@@ -1,0 +1,19 @@
+<div class="row">
+    <div ng-repeat="book in exchange.currentUserBooks">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img ng-src="{{book.picture}}" alt="{{book.title}}"
+                     class="img-responsive img-format-size"/>
+                <div class="caption text-center">
+                    <div class="h5" style="min-height: 30px;">{{book.title}}</div>
+                    <a ng-click="exchange.addToOffersCart(book);"
+                       class="btn btn-primary btn-block">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Add
+                        <i class="fa fa-plus-circle fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

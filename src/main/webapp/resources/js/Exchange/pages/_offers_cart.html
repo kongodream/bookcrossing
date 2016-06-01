@@ -1,0 +1,23 @@
+<div ng-repeat="book in exchange.offersCart">
+    <div class="tile purple">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#/books/{{book.id}}">
+                    <span class="h4 title">{{book.title}}</span>
+                </a>
+                <div class="pull-right">
+                    <button class="btn btn-primary">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        <i class="fa fa-minus-circle fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--<span class="h5" ng-repeat="skill in assignment.employee.skills">-->
+            <!--<span class="label label-default">-->
+                <!--{{skill.title}}-->
+            <!--</span>-->
+            <!--&nbsp;-->
+        <!--</span>-->
+    </div>
+</div>

@@ -13,18 +13,20 @@
     <link href="/resources/css/sidebar.css" rel="stylesheet"/>
     <link href="/resources/css/navbar.css" rel="stylesheet"/>
     <link href="/resources/css/lib/ui-select.css" rel="stylesheet"/>
+    <link href="/resources/css/exchange.css" rel="stylesheet"/>
+    <link href="/resources/css/profile.css" rel="stylesheet"/>
 
 
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/jspf/nav.jsp" flush="true"/>
-<br/>
+<br/>eam-builder
 <div class="wrapper">
     <div class="app-container">
         <div class="col-md-2 col-sm-12">
             <jsp:include page="/WEB-INF/views/jspf/sidebar.jsp" flush="true"/>
         </div>
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-10 col-sm-12">
             <div ng-view></div>
         </div>
     </div>
@@ -48,7 +50,11 @@
 <script src="/resources/js/foundBook/foundBook.js"></script>
 <script src="/resources/js/foundBook/foundBookCtrl.js"></script>
 <script src="/resources/js/Genre/genre.js"></script>
+<script src="/resources/js/User/currentUserService.js"></script>
 <script src="/resources/js/Author/author.js"></script>
+<script src="/resources/js/Exchange/exchangeCtrl.js"></script>
+<script src="/resources/js/Exchange/exchangeService.js"></script>
+<script src="/resources/js/User/currentUserCtrl.js"></script>
 
 </body>
 </html>

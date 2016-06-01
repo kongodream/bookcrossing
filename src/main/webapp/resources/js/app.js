@@ -14,12 +14,24 @@ var bookCrossing = angular.module('bookCrossing', [
     'foundBook',
     'foundBookCtrl',
     'genreModule',
-    'authorModule'
+    'authorModule',
+    'exchangeModule',
+    'userModule'
 ]);
 
 bookCrossing.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
+            .when('/profile', {
+                templateUrl: '/resources/js/User/pages/profile.html',
+                controller: 'CurrentUserCtrl',
+                controllerAs: 'cu'
+            })
+            .when('/books/:bookId/exchange/new', {
+                templateUrl: '/resources/js/Exchange/pages/exchange.html',
+                controller: 'ExchangeCtrl',
+                controllerAs: 'exchange'
+            })
             .when('/books', {
                 templateUrl: '/resources/js/Book/pages/books.html',
                 controller: 'booksCtrl'

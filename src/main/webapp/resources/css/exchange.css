@@ -1,0 +1,38 @@
+.exchange {
+    background-color: white;
+    padding: 15px;
+    padding-left: 40px;
+    opacity: 0.95;
+}
+
+/*record*/
+.tile {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.tile .title {
+    margin-top: 0px;
+}
+
+.tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green {
+    color: #fff;
+}
+
+.tile.purple {
+    background: #dbdbdb;
+}
+
+.tile.purple:hover {
+    background: #dcdcdc;
+}
+
+.tile.purple {
+    color: #0f0f0f;
+}
+

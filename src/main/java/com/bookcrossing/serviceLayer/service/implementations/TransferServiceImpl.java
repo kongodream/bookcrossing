@@ -32,7 +32,7 @@ public class TransferServiceImpl implements TransferService {
 
     @Override
     public void createTransfer(int bookId, Authentication authentication) {
-        User creator = userService.getUser((((CurrentUserDetails) authentication.getPrincipal()).getUser().getId()));
+        User creator = userService.getUserById((((CurrentUserDetails) authentication.getPrincipal()).getUser().getId()));
         Book book = bookService.getBookById(bookId);
         Transfer transfer = new Transfer(book, creator);
         transferDAO.save(transfer);

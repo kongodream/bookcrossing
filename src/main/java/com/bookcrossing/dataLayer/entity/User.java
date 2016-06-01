@@ -15,13 +15,16 @@ public class User extends Entity {
     private String familyName;
     @Column
     private String picture;
-    @OneToMany(mappedBy = "creator",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "creator")
     private List<Book> createdBooks = new ArrayList<>();
     @Column
     private String gender;
 
-    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user")
     private List<Transfer> transfers;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books = new ArrayList<>();
 
     public User() {
     }
@@ -93,5 +96,13 @@ public class User extends Entity {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }

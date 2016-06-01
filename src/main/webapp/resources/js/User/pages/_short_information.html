@@ -1,0 +1,50 @@
+<div class="row profile">
+    <div class="col-md-12">
+        <div class="profile-sidebar">
+            <br>
+            <div class="profile-userpic">
+                <img ng-src="{{cu.currentUser.picture}}" class="img-responsive" alt="{{cu.user.surname}}">
+            </div>
+
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    {{cu.currentUser.name}}&nbsp;{{cu.currentUser.familyName}}
+                </div>
+                <!--<div class="profile-usertitle-job">-->
+                    <!--{{employee.position}}-->
+                <!--</div>-->
+            </div>
+
+            <!--<div class="profile-usermenu">-->
+                <!--<ul class="nav">-->
+                    <!--<li class="active">-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="text-center"><strong>Skills:</strong></div>-->
+                        <!--<ui-select multiple ng-model="employee.skills" ng-disabled="undefined" theme="bootstrap"-->
+                                   <!--tagging="employeeDetails.parseTag"-->
+                                   <!--ng-change="employeeDetails.setEmployeeSkills(employee.skills)"-->
+                                   <!--class="profile-ui-select"-->
+                                   <!--permission-manager>-->
+                            <!--<ui-select-match placeholder="No skills yet...">-->
+                                <!--{{$item.title}}-->
+                            <!--</ui-select-match>-->
+                            <!--<ui-select-choices repeat="skill in (employeeDetails.skills | filter:$select.search)">-->
+                                <!--{{skill.title}}-->
+                            <!--</ui-select-choices>-->
+                        <!--</ui-select>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<span class="h6">-->
+                            <!--<i class="glyphicon glyphicon-map-marker"></i>&nbsp;{{employee.address}}-->
+                        <!--</span>-->
+                        <!--<p>-->
+                            <!--<i class="glyphicon glyphicon-envelope"></i>&nbsp;<a href="#">{{employee.email}}</a><br/>-->
+                        <!--</p>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+

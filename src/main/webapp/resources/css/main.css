@@ -46,4 +46,9 @@ li {
     list-style-type: none;
 }
 
+img .img-format-size {
+    height: 175px;
+    width: 170px;
+}
+
 
