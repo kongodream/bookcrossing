@@ -5,11 +5,13 @@ import com.bookcrossing.dataLayer.entity.Book;
 import com.bookcrossing.dataLayer.entity.Genre;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BookDTO {
     private int id;
     private String title;
-    private List<Author> author;
+    private List<AuthorDTO> authors;
     private Genre genre;
     private UserDTO creator;
     private UserDTO owner;
@@ -23,9 +25,17 @@ public class BookDTO {
         this.creator = new UserDTO(book.getCreator());
         this.picture = book.getPicture();
         this.description = book.getDescription();
+        this.authors = createAuthorDTOs(book.getAuthors());
         if(book.getOwner()!=null){
             this.owner = new UserDTO(book.getOwner());
         }
+    }
+
+    private List<AuthorDTO> createAuthorDTOs(Set<Author> authors) {
+        return authors
+                .stream()
+                .map(AuthorDTO::new)
+                .collect(Collectors.toList());
     }
 
     public int getId() {
@@ -44,12 +54,12 @@ public class BookDTO {
         this.title = title;
     }
 
-    public List<Author> getAuthor() {
-        return author;
+    public List<AuthorDTO> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(List<Author> author) {
-        this.author = author;
+    public void setAuthors(List<AuthorDTO> author) {
+        this.authors = author;
     }
 
     public Genre getGenre() {

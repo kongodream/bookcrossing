@@ -1,4 +1,3 @@
-
 /* Profile sidebar */
 .profile-sidebar {
     background: #fff;
@@ -148,6 +147,11 @@ div.pull-up {
 
 /* Exchanges */
 .exchange-container {
+    margin-left: 15px;
     border: 1px solid #DDDDDD; /* Параметры границы */
     padding: 10px; /* Поля вокруг текста */
+}
+
+.exchange-container .btn {
+    width: 76px;
 }

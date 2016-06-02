@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class BookResponseDTO {
     private int id;
     private String title;
-    private List<AuthorDTO> author;
+    private List<AuthorDTO> authors;
     private Genre genre;
     private UserDTO creator;
     private String picture;
@@ -22,7 +22,7 @@ public class BookResponseDTO {
     public BookResponseDTO(Book book) {
         this.id = book.getId();
         this.title = book.getTitle();
-        this.author = createAuthorDTOs(book.getAuthors());
+        this.authors = createAuthorDTOs(book.getAuthors());
         this.genre = book.getGenre();
         this.creator = new UserDTO(book.getCreator());
         this.picture = book.getPicture();
@@ -52,12 +52,12 @@ public class BookResponseDTO {
         this.title = title;
     }
 
-    public List<AuthorDTO> getAuthor() {
-        return author;
+    public List<AuthorDTO> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(List<AuthorDTO> author) {
-        this.author = author;
+    public void setAuthors(List<AuthorDTO> authors) {
+        this.authors = authors;
     }
 
     public Genre getGenre() {

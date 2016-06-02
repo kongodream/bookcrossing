@@ -22,11 +22,19 @@ public class BookServiceImpl implements BookService {
     private BookDAO bookDAO;
 
     @Override
-    public void saveBook(RequestBook book, Authentication authentication) {
+    public void save(Book book, Authentication authentication) {
         User creator = ((User) authentication.getPrincipal());
-        Book newBook = new Book(book, creator);
-        bookDAO.save(newBook);
+//        Book newBook = new Book(book, creator);
+        book.setCreator(creator);
+        book.setOwner(creator);
+        bookDAO.save(book);
 
+    }
+
+    @Override
+    public Book update(Book book) {
+        bookDAO.save(book);
+        return book;
     }
 
     @Override

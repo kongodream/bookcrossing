@@ -1,0 +1,13 @@
+<div ng-init="book = bookCtrl.newBook">
+    <legend>Create new project</legend>
+    <form ng-submit="bookCtrl.createNewBook();" class="form-horizontal">
+        <div class="col-sm-12 col-md-8">
+            <div ng-include="'/resources/js/Book/pages/_form.html'"></div>
+            <br>
+            <button class="btn btn-lg btn-success pull-right" type="submit">
+                Create
+            </button>
+        </div>
+    </form>
+</div>
+

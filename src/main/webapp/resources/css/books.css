@@ -58,3 +58,39 @@
 .table.table-history {
     font-size: 1.4em;
 }
+
+.text-title {
+    font-weight: bold;
+}
+
+.description-text {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.book-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+    margin: 5px;
+}
+
+.book-owner-info {
+    border: 1px solid #f4d03f;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 15px 0px 15px 0px;
+}
+
+.book-ui-select {
+    border-color: white;
+}
+
+.book-authors .ui-select-match-item .btn .btn-default .btn-xs .btn-primary {
+    font-size: 18px;
+}

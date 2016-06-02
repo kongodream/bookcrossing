@@ -1,0 +1,19 @@
+<div class="book-authors">
+<ui-select multiple ng-model="book.authors" ng-disabled="true" theme="bootstrap"
+           class="book-ui-select">
+    <ui-select-match>
+        {{$item.firstName}}&nbsp;
+        <span ng-if="{{$item.secondName != null}}">
+            {{$item.secondName}}&nbsp;
+        </span>
+        {{$item.surname}}
+    </ui-select-match>
+    <ui-select-choices repeat="author in book.authors" style="font-size: 18px;">
+        {{author.firstName}}&nbsp;
+        <span ng-if="{{author.secondName != null}}">
+            {{author.secondName}}&nbsp;
+        </span>
+        {{author.surname}}
+    </ui-select-choices>
+</ui-select>
+</div>

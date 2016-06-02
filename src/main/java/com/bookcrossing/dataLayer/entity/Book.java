@@ -36,12 +36,12 @@ public class Book extends Entity {
 
     public Book(RequestBook book, User creator) {
         this.title = book.getTitle();
-        this.authors = new HashSet<>(book.getAuthor());
         this.description = book.getDescription();
         this.genre = book.getGenre();
         this.picture = book.getPicture();
         this.creator = creator;
         this.owner = creator;
+        this.authors = new HashSet<>(book.getAuthors());
     }
 
     public String getTitle() {
@@ -51,7 +51,6 @@ public class Book extends Entity {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public Set<Author> getAuthors() {
         return authors;

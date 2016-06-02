@@ -27,10 +27,20 @@ bookCrossing.config(['$routeProvider',
                 controller: 'CurrentUserCtrl',
                 controllerAs: 'cu'
             })
-            .when('/books/:bookId/exchange/new', {
+            .when('/books/:bookId/exchanges/new', {
                 templateUrl: '/resources/js/Exchange/pages/exchange.html',
                 controller: 'ExchangeCtrl',
                 controllerAs: 'exchange'
+            })
+            .when('/books/new', {
+                templateUrl: '/resources/js/Book/pages/newBook.html',
+                controller: 'BookCreationCtrl',
+                controllerAs: 'bookCtrl'
+            })
+            .when('/books/:bookId/edit', {
+                templateUrl: '/resources/js/Book/pages/edit_book.html',
+                controller: 'BookCreationCtrl',
+                controllerAs: 'bookCtrl'
             })
             .when('/books', {
                 templateUrl: '/resources/js/Book/pages/books.html',
@@ -39,10 +49,6 @@ bookCrossing.config(['$routeProvider',
             .when('/books/:bookId', {
                 templateUrl: '/resources/js/Book/pages/book.html',
                 controller: 'BookDetailCtrl'
-            })
-            .when('/createBook', {
-                templateUrl: '/resources/js/Book/pages/new_book.html',
-                controller: 'BookCreationCtrl'
             })
             .when('/myBooks', {
                 templateUrl: '/resources/js/profile/myBooks.html',

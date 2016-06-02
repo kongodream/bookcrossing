@@ -10,7 +10,9 @@ import java.util.List;
 
 public interface BookService {
 
-    void saveBook(RequestBook book, Authentication authentication);
+    void save(Book book, Authentication authentication);
+
+    Book update(Book book);
 
     List<BookResponseDTO> getAllBook();
 

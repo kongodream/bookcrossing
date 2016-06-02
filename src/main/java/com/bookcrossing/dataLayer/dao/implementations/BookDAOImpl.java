@@ -19,7 +19,7 @@ public class BookDAOImpl implements BookDAO {
     @Override
     public void save(Book book) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(book);
+        session.saveOrUpdate(book);
     }
 
     @Override

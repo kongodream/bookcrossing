@@ -44,6 +44,7 @@
 <script src="/resources/js/Book/bookService.js"></script>
 <script src="/resources/js/Book/bookCtrls.js"></script>
 <script src="/resources/js/Book/transferService.js"></script>
+<script src="/resources/js/Book/bookCreationCtrl.js"></script>
 <script src="/resources/js/profile/profileCtrl.js"></script>
 <script src="/resources/js/profile/userTransfers.js"></script>
 <script src="/resources/js/foundBook/foundBook.js"></script>
