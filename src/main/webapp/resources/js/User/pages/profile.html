@@ -2,5 +2,24 @@
     <div ng-include src="'/resources/js/User/pages/_short_information.html'"></div>
 </div>
 <div class="col-md-9">
+    <div class="row">
+        <h3>My wish list:</h3>
+        <div ng-repeat="exchange in cu.currentUser.createdExchanges" class="exchange-container">
+            <div class="col-md-3">
+                <img ng-src="{{exchange.desiredBook.picture}}" height="120px" width="120px"/>
+                <br>{{exchange.desiredBook.title}}
+            </div>
+            <div class="col-md-7">
 
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-success">Confirm</a>
+                <br>
+                <a class="btn btn-danger">Deny</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    </div>
 </div>

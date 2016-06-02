@@ -1,7 +1,7 @@
 var bookCrossing = angular.module('bookCrossing', [
     'ngRoute',
     'ngResource',
-    'ngAnimate',
+    //'ngAnimate',
     'navbarCtrl',
     'sidebarCtrl',
     'bookService',
@@ -34,15 +34,15 @@ bookCrossing.config(['$routeProvider',
             })
             .when('/books', {
                 templateUrl: '/resources/js/Book/pages/books.html',
-                controller: 'booksCtrl'
+                controller: 'BooksCtrl'
             })
             .when('/books/:bookId', {
                 templateUrl: '/resources/js/Book/pages/book.html',
-                controller: 'bookDetailCtrl'
+                controller: 'BookDetailCtrl'
             })
             .when('/createBook', {
                 templateUrl: '/resources/js/Book/pages/new_book.html',
-                controller: 'bookCreationCtrl'
+                controller: 'BookCreationCtrl'
             })
             .when('/myBooks', {
                 templateUrl: '/resources/js/profile/myBooks.html',

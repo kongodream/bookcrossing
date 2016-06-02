@@ -1,11 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Andalus;
+    font-family: Arial;
 }
 
 body {
-    background: url("/resources/images/books-bench-background3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -39,16 +38,31 @@ body {
 }
 
 .app-container {
-    margin-top: 70px;
+    margin-top: 65px;
 }
 
 li {
     list-style-type: none;
 }
 
-img .img-format-size {
-    height: 175px;
-    width: 170px;
+.img-format-size {
+    height: 148px;
+    width: 189px !important;
 }
 
+.img-lib-size {
+    height: 104px !important;
+    width: 133px !important;
+}
 
+.desired-book {
+    padding: 15px;
+    padding-bottom: 45px;
+    margin-bottom: 20px;
+    background-color: #f7ecb5;
+}
+
+.exchange {
+    display: block;
+    background-color: #faf2cc;
+}

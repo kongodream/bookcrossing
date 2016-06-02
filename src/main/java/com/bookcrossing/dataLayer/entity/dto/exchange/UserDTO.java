@@ -1,12 +1,10 @@
 package com.bookcrossing.dataLayer.entity.dto.exchange;
 
 import com.bookcrossing.dataLayer.entity.Book;
+import com.bookcrossing.dataLayer.entity.Exchange;
 import com.bookcrossing.dataLayer.entity.User;
-import com.bookcrossing.dataLayer.entity.dto.exchange.BookDTO;
-import org.hibernate.mapping.Collection;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +16,8 @@ public class UserDTO {
     private String familyName;
     private String picture;
     private List<BookDTO> books = new ArrayList<>();
+    private List<ExchangeDTO> createdExchanges = new ArrayList<>();
+    private List<ExchangeDTO> receivedExchanges = new ArrayList<>();
 
     public UserDTO(User user) {
         this.id = user.getId();
@@ -26,6 +26,8 @@ public class UserDTO {
         this.familyName = user.getFamilyName();
         this.picture = user.getPicture();
         this.books = createBookDTOs(user.getBooks());
+        this.createdExchanges = createExchangeDTOs(user.getCreatedExchanges());
+        this.receivedExchanges = createExchangeDTOs(user.getReceivedExchanges());
     }
 
     private List<BookDTO> createBookDTOs(List<Book> books) {
@@ -35,6 +37,12 @@ public class UserDTO {
                 .collect(Collectors.toList());
     }
 
+    private List<ExchangeDTO> createExchangeDTOs(List<Exchange> exchanges) {
+        return exchanges
+                .stream()
+                .map(ExchangeDTO::new)
+                .collect(Collectors.toList());
+    }
 
     public int getId() {
         return id;
@@ -82,5 +90,21 @@ public class UserDTO {
 
     public void setBooks(List<BookDTO> books) {
         this.books = books;
+    }
+
+    public List<ExchangeDTO> getCreatedExchanges() {
+        return createdExchanges;
+    }
+
+    public void setCreatedExchanges(List<ExchangeDTO> createdExchanges) {
+        this.createdExchanges = createdExchanges;
+    }
+
+    public List<ExchangeDTO> getReceivedExchanges() {
+        return receivedExchanges;
+    }
+
+    public void setReceivedExchanges(List<ExchangeDTO> receivedExchanges) {
+        this.receivedExchanges = receivedExchanges;
     }
 }

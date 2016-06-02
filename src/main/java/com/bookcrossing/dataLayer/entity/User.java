@@ -23,6 +23,12 @@ public class User extends Entity {
     @OneToMany(mappedBy = "user")
     private List<Transfer> transfers;
 
+    @OneToMany(mappedBy = "creator")
+    private List<Exchange> createdExchanges;
+
+    @OneToMany(mappedBy = "recipient")
+    private List<Exchange> receivedExchanges;
+
     @OneToMany(mappedBy = "owner")
     private List<Book> books = new ArrayList<>();
 
@@ -104,5 +110,21 @@ public class User extends Entity {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public List<Exchange> getCreatedExchanges() {
+        return createdExchanges;
+    }
+
+    public void setCreatedExchanges(List<Exchange> createdExchanges) {
+        this.createdExchanges = createdExchanges;
+    }
+
+    public List<Exchange> getReceivedExchanges() {
+        return receivedExchanges;
+    }
+
+    public void setReceivedExchanges(List<Exchange> receivedExchanges) {
+        this.receivedExchanges = receivedExchanges;
     }
 }

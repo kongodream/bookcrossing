@@ -19,12 +19,11 @@
 
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/jspf/nav.jsp" flush="true"/>
-<br/>eam-builder
-<div class="wrapper">
+<div class="container">
+    <div ng-include src="'/resources/templates/nav.html'"></div>
     <div class="app-container">
         <div class="col-md-2 col-sm-12">
-            <jsp:include page="/WEB-INF/views/jspf/sidebar.jsp" flush="true"/>
+            <div ng-include src="'/resources/templates/sidebar.html'"></div>
         </div>
         <div class="col-md-10 col-sm-12">
             <div ng-view></div>
@@ -54,6 +53,7 @@
 <script src="/resources/js/Author/author.js"></script>
 <script src="/resources/js/Exchange/exchangeCtrl.js"></script>
 <script src="/resources/js/Exchange/exchangeService.js"></script>
+<script src="/resources/js/Exchange/offersCartService.js"></script>
 <script src="/resources/js/User/currentUserCtrl.js"></script>
 
 </body>

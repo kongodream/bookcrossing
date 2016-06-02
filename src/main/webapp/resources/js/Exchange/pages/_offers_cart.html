@@ -1,4 +1,4 @@
-<div ng-repeat="book in exchange.offersCart">
+<div ng-repeat="book in exchange.getOffersCart()">
     <div class="tile purple">
         <div class="row">
             <div class="col-md-12">
@@ -6,7 +6,8 @@
                     <span class="h4 title">{{book.title}}</span>
                 </a>
                 <div class="pull-right">
-                    <button class="btn btn-primary">
+                    <button ng-click="exchange.deleteFromOffersCart(book);"
+                            class="btn btn-primary">
                         <span class="glyphicon glyphicon-remove"></span>
                         <i class="fa fa-minus-circle fa-2x"></i>
                     </button>

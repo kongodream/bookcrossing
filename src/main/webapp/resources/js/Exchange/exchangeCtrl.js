@@ -1,6 +1,6 @@
 angular.module('exchangeModule', [])
-    .controller('ExchangeCtrl', ['$location', '$routeParams', 'CurrentUser', 'Book',
-        function ($location, $routeParams, CurrentUser, Book) {
+    .controller('ExchangeCtrl', ['$location', '$routeParams', 'CurrentUser', 'Book', 'OffersCart',
+        function ($location, $routeParams, CurrentUser, Book, OffersCart) {
             var self = this;
             var desiredBookId = $routeParams.bookId;
             self.offersCart = [];
@@ -14,8 +14,10 @@ angular.module('exchangeModule', [])
                     self.currentUserBooks = currentUser.books;
                 });
 
-            self.addToOffersCart = function (book) {
-                self.offersCart.push(book);
-            }
+            self.addToOffersCart = OffersCart.addToOffersCart;
+
+            self.deleteFromOffersCart = OffersCart.removeFromOffersCart;
+
+            self.getOffersCart = OffersCart.getOffersCart;
 
         }]);

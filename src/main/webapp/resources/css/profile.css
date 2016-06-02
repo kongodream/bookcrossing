@@ -146,3 +146,8 @@ div.pull-up {
     margin-top: 10px;
 }
 
+/* Exchanges */
+.exchange-container {
+    border: 1px solid #DDDDDD; /* Параметры границы */
+    padding: 10px; /* Поля вокруг текста */
+}

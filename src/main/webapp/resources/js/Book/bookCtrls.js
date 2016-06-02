@@ -1,11 +1,11 @@
 var module = angular.module('bookCtrls', []);
 
-module.controller('booksCtrl', ['$scope', 'Book',
+module.controller('BooksCtrl', ['$scope', 'Book',
     function ($scope, Book) {
         $scope.books = Book.query();
     }]);
 
-module.controller('bookDetailCtrl', ['$scope', '$routeParams', 'Book', 'GenreService', 'Transfer', 'FoundBook', '$rootScope', '$location',
+module.controller('BookDetailCtrl', ['$scope', '$routeParams', 'Book', 'GenreService', 'Transfer', 'FoundBook', '$rootScope', '$location',
     function ($scope, $routeParams, Book, GenreService, Transfer, FoundBook, $rootScope, $location) {
         var bookId = $routeParams.bookId;
 
@@ -23,7 +23,7 @@ module.controller('bookDetailCtrl', ['$scope', '$routeParams', 'Book', 'GenreSer
         }
     }]);
 
-module.controller('bookCreationCtrl', ['$scope', 'GenreService', 'AuthorService', '$location', 'Book', 'Notification',
+module.controller('BookCreationCtrl', ['$scope', 'GenreService', 'AuthorService', '$location', 'Book', 'Notification',
     function ($scope, GenreService, AuthorService, $location, Book, Notification) {
         $scope.genres = [];
         $scope.authors = [];

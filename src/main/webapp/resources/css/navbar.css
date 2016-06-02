@@ -1,10 +1,11 @@
 .navbar {
-    background-color: #fffbc7;
+    background-color: #22313f;
+    height:auto;
 }
 
 .navbar-default .navbar-brand.logo {
-    color: #d5d5d5;
-    font-family: "Brush Script MT" !important;
+    color: whitesmoke;
+    font-family: "Arial" !important;
     font-size: 2em;
 }
 
