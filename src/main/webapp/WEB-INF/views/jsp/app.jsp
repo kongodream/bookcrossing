@@ -51,13 +51,14 @@
 <script src="/resources/js/profile/userTransfers.js"></script>
 <script src="/resources/js/foundBook/foundBook.js"></script>
 <script src="/resources/js/foundBook/foundBookCtrl.js"></script>
-<script src="/resources/js/Genre/genre.js"></script>
+<script src="/resources/js/Genre/genreService.js"></script>
 <script src="/resources/js/User/currentUserService.js"></script>
 <script src="/resources/js/Author/author.js"></script>
 <script src="/resources/js/Exchange/exchangeCtrl.js"></script>
 <script src="/resources/js/Exchange/exchangeService.js"></script>
 <script src="/resources/js/Exchange/offersCartService.js"></script>
 <script src="/resources/js/User/currentUserCtrl.js"></script>
+<script src="/resources/js/Genre/genreCtrl.js"></script>
 
 <script src="/resources/js/Genre/genreFilter.js"></script>
 <script src="/resources/js/Author/authorFilter.js"></script>

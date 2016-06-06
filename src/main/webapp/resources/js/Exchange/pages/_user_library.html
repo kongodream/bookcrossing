@@ -4,7 +4,7 @@
             <div class="thumbnail">
                 <div class="img-lib-size">
                     <img ng-src="{{book.picture}}" alt="{{book.title}}"
-                         class="img-responsive"/>
+                         class="img-lib-responsive"/>
                 </div>
                 <div class="caption text-center">
                     <div class="h5" style="min-height: 30px;">{{book.title}}</div>
@@ -13,7 +13,7 @@
                         <a ng-click="exchange.addToOffersCart(book);"
                            class="btn btn-primary btn-block">
                             <span class="glyphicon glyphicon-plus"></span>
-                            Add
+                            Додати
                             <i class="fa fa-plus-circle fa-2x"></i>
                         </a>
                     </div>
@@ -21,7 +21,7 @@
                         <a ng-click="exchange.deleteFromOffersCart(book);"
                            class="btn btn-primary btn-block">
                             <span class="glyphicon glyphicon-remove"></span>
-                            Remove
+                            Не пропонувати
                             <i class="fa fa-minus-circle fa-2x"></i>
                         </a>
                     </div>

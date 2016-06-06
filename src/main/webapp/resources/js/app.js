@@ -30,6 +30,11 @@ bookCrossing.config(['$routeProvider',
                 controller: 'CurrentUserCtrl',
                 controllerAs: 'cu'
             })
+            .when('/genres/:genreTitle', {
+                templateUrl: '/resources/js/Genre/pages/genreBooks.html',
+                controller: 'GenreCtrl',
+                controllerAs: 'genreCtrl'
+            })
             .when('/books/:bookId/exchanges/new', {
                 templateUrl: '/resources/js/Exchange/pages/exchange.html',
                 controller: 'ExchangeCtrl',

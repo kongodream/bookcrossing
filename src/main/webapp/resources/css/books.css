@@ -94,3 +94,7 @@
 .book-authors .ui-select-match-item .btn .btn-default .btn-xs .btn-primary {
     font-size: 18px;
 }
+
+.description-height {
+    height: 100px;
+}

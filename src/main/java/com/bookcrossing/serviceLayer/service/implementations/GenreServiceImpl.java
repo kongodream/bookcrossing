@@ -2,6 +2,7 @@ package com.bookcrossing.serviceLayer.service.implementations;
 
 import com.bookcrossing.dataLayer.dao.interfaces.GenreDAO;
 import com.bookcrossing.dataLayer.entity.Genre;
+import com.bookcrossing.dataLayer.entity.dto.BookShortInformationDTO;
 import com.bookcrossing.dataLayer.entity.dto.GenreDTO;
 import com.bookcrossing.serviceLayer.service.interfaces.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,14 @@ public class GenreServiceImpl implements GenreService {
         List<Genre> genres = genreDAO.getAllGenres();
         return genres.stream()
                 .map(genre -> new GenreDTO(genre))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<BookShortInformationDTO> getBooksByGenre(String title) {
+        return genreDAO.getBooksByGenre(title)
+                .stream()
+                .map(BookShortInformationDTO::new)
                 .collect(Collectors.toList());
     }
 }

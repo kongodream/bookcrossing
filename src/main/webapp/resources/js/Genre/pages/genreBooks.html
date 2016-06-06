@@ -1,0 +1,18 @@
+<div ng-repeat="book in genreCtrl.books">
+    <a href="#/books/{{book.id}}">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <div class="img-format-size">
+                    <img ng-src="{{book.picture}}" height="148px" width="189px" class="img-responsive" alt="{{book.title}}"/>
+                </div>
+
+                <div class="caption text-center description-height">
+                    <h5>{{book.title}}</h5>
+                    <a href="#/books/{{book.id}}/exchanges/new" class="btn btn-success">Make offer</a>
+                </div>
+                <p>
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
