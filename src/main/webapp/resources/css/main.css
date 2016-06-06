@@ -46,7 +46,7 @@ li {
 }
 
 .img-format-size {
-    height: 148px;
+    height: 148px !important;
     width: 189px !important;
 }
 

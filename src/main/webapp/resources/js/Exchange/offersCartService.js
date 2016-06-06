@@ -31,5 +31,9 @@ angular.module('exchangeModule')
             return books;
         };
 
+        offersCart.cleanOffersCart = function () {
+            books = [];
+        };
+
         return offersCart;
     }]);

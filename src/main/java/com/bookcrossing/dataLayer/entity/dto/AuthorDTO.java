@@ -4,14 +4,24 @@ package com.bookcrossing.dataLayer.entity.dto;
 import com.bookcrossing.dataLayer.entity.Author;
 
 public class AuthorDTO {
+    private int id;
     private String firstName;
     private String secondName;
     private String surname;
 
     public AuthorDTO(Author author) {
+        this.id = author.getId();
         this.firstName = author.getFirstName();
         this.secondName = author.getSecondName();
         this.surname = author.getSurname();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {

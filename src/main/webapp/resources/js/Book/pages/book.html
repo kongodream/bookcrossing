@@ -1,9 +1,9 @@
 <div class="col-md-3">
-    <img class="img-responsive img-center img-rounded"
+    <img class="img-details-responsive img-center img-rounded"
          ng-src="{{book.picture}}">
 
     <a href="#/books/{{book.id}}/exchanges/new" class="btn btn-success full-width">
-        Make offer
+        Створити пропозицію
     </a>
 </div>
 <div class="col-md-9">
@@ -11,17 +11,17 @@
         {{book.title}}
     </div>
     <div class="description-text">
-        <span class="text-title">Genre:</span> {{book.genre.title}}
+        <span class="text-title">Жанр:</span> {{book.genre.title}}
     </div>
 
     <div class="description-text">
-        <span class="text-title">Authors:</span>
+        <span class="text-title">Автори:</span>
         <div ng-include="'/resources/js/Book/pages/_book_authors.html'"></div>
     </div>
 
     <div class="book-owner-info">
         <div class="description-text">
-            <span class="text-title">Owner:</span> {{book.owner.name}}
+            <span class="text-title">Власник:</span> {{book.owner.name}}
         </div>
         <div class="description-text">
             <span class="text-title">Email:</span> {{book.owner.email}}
@@ -29,7 +29,7 @@
     </div>
 
     <div class="description-text">
-        <span class="text-title">Description:</span>
+        <span class="text-title">Короткий опис:</span>
         <br>
         <span>{{book.description}}</span>
     </div>

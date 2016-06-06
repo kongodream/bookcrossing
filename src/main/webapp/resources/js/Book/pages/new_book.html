@@ -1,15 +1,15 @@
 <div class="col-md-5 col-md-offset-4 book">
-    <h2>Create new book</h2>
+    <h2>Створити нову книгу</h2>
     <form>
         <label>
-            Title
+            Назва
             <br/>
             <input type="text" ng-model="book.title" class="form-control">
         </label>
 
         <br/>
         <label>
-            Genre(s)
+            Жанр
             <br/>
             <ui-select ng-model="book.genre"  class="form-control">
                 <ui-select-match>
@@ -21,7 +21,7 @@
             </ui-select>
         </label>
         <label>
-            Author(s)
+            Автори
             <br/>
             <ui-select id="authors" multiple ng-model="book.authors" theme="bootstrap"
                        ng-change="setBookAuthors(book.authors)"
@@ -36,7 +36,7 @@
         </label>
         <br/>
         <label>
-            Description
+            Опис
             <br/>
             <textarea style="resize: vertical; width: 260px; padding: 2px 10px;" ng-model="book.description">
 
@@ -44,7 +44,7 @@
         </label>
         <br/>
         <label>
-            Image
+            Зображення
             <br/>
             <input type="text" placeholder="e.g. http://site.com/photo_book.png"
                    class="form-control"
@@ -52,7 +52,7 @@
         </label>
         <br>
         <button ng-click="createBook()" class="btn btn-primary">
-            Create
+            Створити книгу
         </button>
 
         <div class="clearfix"></div>

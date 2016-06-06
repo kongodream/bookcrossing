@@ -20,16 +20,18 @@ angular.module('exchangeModule', [])
 
             self.getOffersCart = OffersCart.getOffersCart;
 
-            self.sendExchange = function () {
+            self.claenOffersCart = OffersCart.cleanOffersCart;
 
-                for (var i = 0; i < self.offersCart.length; i++) {
-                    delete self.offersCart[i].added;
+            self.sendExchange = function () {
+                var offersCart = self.getOffersCart();
+                for (var i = 0; i < offersCart.length; i++) {
+                    delete offersCart[i].added;
                 }
-                ExchangeService.saveExchange(desiredBookId, self.offersCart).then(function (res) {
+                ExchangeService.saveExchange(desiredBookId, offersCart).then(function (res) {
                     redirectToDesiredBook(self.desiredBook.id);
                     Notification("You've sent request!");
                 });
-                self.offersCart = [];
+                self.cleanOffersCart();
             };
 
             function redirectToDesiredBook(id) {

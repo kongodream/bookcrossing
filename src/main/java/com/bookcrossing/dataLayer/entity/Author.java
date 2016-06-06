@@ -45,17 +45,15 @@ public class Author  extends Entity{
 
         Author author = (Author) o;
 
-        if (firstName != null ? !firstName.equals(author.firstName) : author.firstName != null) return false;
-        if (secondName != null ? !secondName.equals(author.secondName) : author.secondName != null) return false;
-        return surname != null ? surname.equals(author.surname) : author.surname == null;
+        if (!firstName.equals(author.firstName)) return false;
+        return surname.equals(author.surname);
 
     }
 
     @Override
     public int hashCode() {
-        int result = firstName != null ? firstName.hashCode() : 0;
-        result = 31 * result + (secondName != null ? secondName.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        int result = firstName.hashCode();
+        result = 31 * result + surname.hashCode();
         return result;
     }
 }

@@ -1,24 +1,24 @@
 <div class="exchange">
     <div class="row desired-book">
-        <span class="h3">You want to get:</span>
+        <span class="h3">Ти хочеш отримати:</span>
         <div ng-include src="'/resources/js/Exchange/pages/_desired_book.html'"></div>
     </div>
     <div class="row">
         <div class="col-md-7">
             <div class="row">
-                <span class="h3">Your library:</span>
+                <span class="h3">Твоя бібліотека:</span>
             </div>
             <div ng-include src="'/resources/js/Exchange/pages/_user_library.html'"></div>
         </div>
         <div class="col-md-5">
             <div class="row">
-                <span class="h3">Your offer:</span>
+                <span class="h3">Пропозиція:</span>
             </div>
             <div ng-include src="'/resources/js/Exchange/pages/_offers_cart.html'"></div>
         </div>
     </div>
     <div class="row">
-       <a class="btn btn-success" ng-click="exchange.sendExchange();">Sent offer</a>
+       <a class="btn btn-success" ng-click="exchange.sendExchange();">Створити пропозицію</a>
     </div>
 </div>
 

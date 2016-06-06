@@ -37,6 +37,8 @@
 <script src="/resources/js/lib/ui-bootstrap.js"></script>
 <script src="/resources/js/lib/ui-select.js"></script>
 <script src="/resources/js/lib/angular-ui-notification.js"></script>
+<script src="/resources/js/lib/underscore.js"></script>
+<script src="/resources/js/underscoreAngular.js"></script>
 
 <script src="/resources/js/app.js"></script>
 <script src="/resources/js/navbarCtrl.js"></script>
@@ -56,6 +58,9 @@
 <script src="/resources/js/Exchange/exchangeService.js"></script>
 <script src="/resources/js/Exchange/offersCartService.js"></script>
 <script src="/resources/js/User/currentUserCtrl.js"></script>
+
+<script src="/resources/js/Genre/genreFilter.js"></script>
+<script src="/resources/js/Author/authorFilter.js"></script>
 
 </body>
 </html>

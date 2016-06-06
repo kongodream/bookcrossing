@@ -1,8 +1,36 @@
 var module = angular.module('bookCtrls', []);
 
-module.controller('BooksCtrl', ['$scope', 'Book',
-    function ($scope, Book) {
-        $scope.books = Book.query();
+module.controller('BooksCtrl', ['Book', 'GenreService', 'AuthorService',
+    function (Book, GenreService, AuthorService) {
+        var self = this;
+
+        self.genres = [];
+        self.selectedAuthors = [];
+        self.changeAuthors = function (selectedAuthors) {
+            self.selectedAuthors = selectedAuthors;
+        };
+
+        self.fetchAllAuthors = function () {
+            AuthorService.getAllAuthors()
+                .then(function (data) {
+                    self.authors = data;
+                });
+        };
+        self.fetchAllAuthors();
+
+        self.fetchAllGenres = function () {
+            GenreService.getGenres()
+                .then(function (data) {
+                    self.genres = data;
+                });
+        };
+        self.fetchAllGenres();
+
+        self.selectedGenre = {};
+        self.changeGenres = function (selectedGenres) {
+            self.selectedGenre = selectedGenres;
+        };
+        self.books = Book.query();
     }]);
 
 module.controller('BookDetailCtrl', ['$scope', '$routeParams', 'Book', 'GenreService', 'Transfer', 'FoundBook', '$rootScope', '$location',

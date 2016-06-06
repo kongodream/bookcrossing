@@ -1,10 +1,10 @@
-<label for="title" class="control-label"><h4>Title:</h4></label>
+<label for="title" class="control-label"><h4>Назва:</h4></label>
 <div>
     <input id="title" ng-model="book.title" type="text" class="form-control input-lg" placeholder="Title"
            required="required"/>
 </div>
 
-<label class="control-label" for="genre"><h4>Genre:</h4></label>
+<label class="control-label" for="genre"><h4>Жанр:</h4></label>
 <div>
     <ui-select id="genre" ng-model="book.genre">
         <ui-select-match>
@@ -16,7 +16,7 @@
     </ui-select>
 </div>
 
-<label for="authors" class="control-label"><h4>Authors:</h4></label>
+<label for="authors" class="control-label"><h4>Автори:</h4></label>
 <div>
     <ui-select id="authors" multiple ng-model="book.authors" theme="bootstrap"
                ng-change="setBookAuthors(book.authors)"
@@ -30,11 +30,11 @@
     </ui-select>
 </div>
 
-<label for="picture"><h4>Image URL:</h4></label>
+<label for="picture"><h4>Картинка:</h4></label>
 <input id="picture" ng-model="book.picture" class="form-control input-lg"
        rows="5"/>
 
-<label for="description"><h4>Description:</h4></label>
+<label for="description"><h4>Короткий опис:</h4></label>
 <textarea id="description" ng-model="book.description" class="form-control input-lg" rows="5"
           required="required" style="resize: vertical">
 </textarea>

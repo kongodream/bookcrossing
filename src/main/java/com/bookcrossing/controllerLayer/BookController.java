@@ -30,9 +30,6 @@ public class BookController {
     private ExchangeService exchangeService;
 
     @Autowired
-    private ExchangeService Service;
-
-    @Autowired
     private AuthorService authorService;
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
@@ -71,12 +68,12 @@ public class BookController {
 
     @RequestMapping(value = "/books/{bookId}/exchanges", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void createExchange(@PathVariable("bookId") int bookId, @RequestBody List<com.bookcrossing.dataLayer.entity.dto.exchange.BookDTO> offersCart,
+    public void createExchange(@PathVariable("bookId") int bookId, @RequestBody List<Book> offersCart,
                                Authentication authentication) {
         User currentUser = (User) authentication.getPrincipal();
         Book desiredBook = bookService.getBookById(bookId);
-//        Exchange exchange = new Exchange(currentUser, desiredBook.getOwner(), desiredBook, offersCart);
-//        exchangeService.saveExchange(exchange);
+        Exchange exchange = new Exchange(currentUser, desiredBook.getOwner(), desiredBook, offersCart);
+        exchangeService.saveExchange(exchange);
     }
 }
 
